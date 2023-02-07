@@ -1,0 +1,89 @@
+-- Gui to Lua
+-- Version: 3.4
+
+-- Instances:
+
+local MainGui = Instance.new("ScreenGui")
+local KeyFrame = Instance.new("Frame")
+local KeyBox = Instance.new("TextBox")
+local EnterKey = Instance.new("TextButton")
+local Smooth = Instance.new("UICorner")
+local EnterKeyHereLabel = Instance.new("TextLabel")
+local CavHubLabel = Instance.new("TextLabel")
+
+--Properties:
+
+MainGui.Name = "MainGui"
+MainGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MainGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+KeyFrame.Name = "KeyFrame"
+KeyFrame.Parent = MainGui
+KeyFrame.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+KeyFrame.BorderSizePixel = 4
+KeyFrame.Position = UDim2.new(0.301662713, 0, 0.280246913, 0)
+KeyFrame.Size = UDim2.new(0, 501, 0, 355)
+
+KeyBox.Name = "KeyBox"
+KeyBox.Parent = KeyFrame
+KeyBox.BackgroundColor3 = Color3.fromRGB(136, 136, 136)
+KeyBox.BorderSizePixel = 3
+KeyBox.Position = UDim2.new(0.299401194, 0, 0.292957783, 0)
+KeyBox.Size = UDim2.new(0, 200, 0, 50)
+KeyBox.Font = Enum.Font.SourceSans
+KeyBox.Text = ""
+KeyBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+KeyBox.TextSize = 14.000
+
+EnterKey.Name = "EnterKey"
+EnterKey.Parent = KeyFrame
+EnterKey.BackgroundColor3 = Color3.fromRGB(44, 202, 0)
+EnterKey.BorderSizePixel = 0
+EnterKey.Position = UDim2.new(0.299401194, 0, 0.543662012, 0)
+EnterKey.Size = UDim2.new(0, 200, 0, 55)
+EnterKey.Font = Enum.Font.SourceSansBold
+EnterKey.Text = "ENTER"
+EnterKey.TextColor3 = Color3.fromRGB(0, 0, 0)
+EnterKey.TextScaled = true
+EnterKey.TextSize = 14.000
+EnterKey.TextWrapped = true
+EnterKey.MouseButton1Down:Connect(function()
+	if KeyBox.Text == "Cavalry" then
+		KeyFrame.Visible = false
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/CavalryDriven/ExploitGUI1/main/Universal2"), true))()
+	else
+		KeyBox.Text = "Wrong key, try again."
+		wait(1)
+		KeyBox.Text = ""
+	end
+end)
+
+Smooth.CornerRadius = UDim.new(0, 15)
+Smooth.Name = "Smooth"
+Smooth.Parent = EnterKey
+
+EnterKeyHereLabel.Name = "EnterKeyHereLabel"
+EnterKeyHereLabel.Parent = KeyFrame
+EnterKeyHereLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EnterKeyHereLabel.BackgroundTransparency = 1.000
+EnterKeyHereLabel.Position = UDim2.new(0.299401194, 0, 0.132394373, 0)
+EnterKeyHereLabel.Size = UDim2.new(0, 200, 0, 50)
+EnterKeyHereLabel.Font = Enum.Font.Unknown
+EnterKeyHereLabel.Text = "ENTER KEY HERE"
+EnterKeyHereLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+EnterKeyHereLabel.TextScaled = true
+EnterKeyHereLabel.TextSize = 14.000
+EnterKeyHereLabel.TextWrapped = true
+
+CavHubLabel.Name = "CavHubLabel"
+CavHubLabel.Parent = KeyFrame
+CavHubLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CavHubLabel.BackgroundTransparency = 1.000
+CavHubLabel.Position = UDim2.new(0.299401194, 0, 0.833802819, 0)
+CavHubLabel.Size = UDim2.new(0, 200, 0, 50)
+CavHubLabel.Font = Enum.Font.Unknown
+CavHubLabel.Text = "CavHub v1.0"
+CavHubLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+CavHubLabel.TextScaled = true
+CavHubLabel.TextSize = 14.000
+CavHubLabel.TextWrapped = true
